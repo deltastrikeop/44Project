@@ -43,7 +43,7 @@ public class ShoppingCart {
 		
 		System.out.println("-------------------------------");
 		double subtotal = calculateSubtotal();
-		double tax = subtotal * 10;
+		double tax = subtotal * 10/100;
 		double total = subtotal + tax;
 				
 		System.out.println("Subtotal: " + subtotal);
