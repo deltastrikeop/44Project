@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class ShoppingCart {
 
@@ -34,7 +34,12 @@ public class ShoppingCart {
 	
 	private static void displayCart() {
 		System.out.println("-------------------------------");
-		System.out.println("Cart Details");
+		java.util.Date date = new java.util.Date();
+		System.out.println("Welcome to SchoolShopper!");
+		System.out.println("3000 Mission College Blvd");
+		System.out.println("Santa Clara, CA");
+		System.out.println("");
+		System.out.println(date);
 		System.out.println("-------------------------------");
 		
 		for (int i=0; i < totalItems; i++) {
@@ -64,7 +69,7 @@ public class ShoppingCart {
 	
 	private static void showLineItem(int index) {
 		
-		String quantityText = quantity[index] + "\t--\t"; //3 -- Pencils
+		String quantityText = quantity[index] + "   "; //3 -- Pencils
 		String itemText = items[index] + "      @      $"; //Pencils
 		String priceText = prices[index] + " = $" + prices[index] * quantity[index];
 		
