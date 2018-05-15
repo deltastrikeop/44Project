@@ -10,7 +10,7 @@ public class ShoppingCart {
 	public static void main(String[] args) {
 		
 		System.out.println("Welcome to my store.");
-		totalItems = getNumberOfItems("How many items do you want to buy?");
+		totalItems = getNumberOfItems("How many items do you want to buy? ");
 		items = new String[totalItems];
 		prices = new double[totalItems];
 		quantity = new int[totalItems];
@@ -27,9 +27,9 @@ public class ShoppingCart {
 	}
 	
 	private static void getItemDetails(int index) {
-		items[index] = getItemName("What is the name of the item" + (index+1) + "?");
-		prices[index] = getItemPrice("What is the price of item" + (index+1) + "?");
-		quantity[index] = getItemQuantity("How many of item" + (index+1) + "?");
+		items[index] = getItemName("What is the name of the item" + (index+1) + "? ");
+		prices[index] = getItemPrice("What is the price of item" + (index+1) + "? $");
+		quantity[index] = getItemQuantity("How many of item" + (index+1) + "? ");
 	}
 	
 	private static void displayCart() {
@@ -46,10 +46,10 @@ public class ShoppingCart {
 		double tax = subtotal * 10/100;
 		double total = subtotal + tax;
 				
-		System.out.println("Subtotal: " + subtotal);
-		System.out.println("Sales tax @ 10% " + tax);
-		System.out.println("Total Cost: " +total);
-		System.out.println("Average Cost of All Items: " + subtotal / getTotalItems());
+		System.out.println("Subtotal: $" + subtotal);
+		System.out.println("Sales tax @ 10% : " + tax);
+		System.out.println("Total Cost: $" +total);
+		System.out.println("Average Cost of All Items: $" + subtotal / getTotalItems());
 		
 	}
 	
@@ -64,9 +64,9 @@ public class ShoppingCart {
 	
 	private static void showLineItem(int index) {
 		
-		String quantityText = quantity[index] + "\t--\t" + items[index]; //3 -- Pencils
-		String itemText = items[index] + "........"; //Pencils
-		String priceText = prices[index] + " = " + prices[index] * quantity[index];
+		String quantityText = quantity[index] + "\t--\t"; //3 -- Pencils
+		String itemText = items[index] + "      @      $"; //Pencils
+		String priceText = prices[index] + " = $" + prices[index] * quantity[index];
 		
 		System.out.println(quantityText + itemText + priceText);
 	}
